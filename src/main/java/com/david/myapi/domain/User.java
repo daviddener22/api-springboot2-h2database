@@ -18,18 +18,21 @@ public class User implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@NotEmpty(message = "NAME is required")
 	@Length(min = 3, max = 100, message = "NAME must be between 3 and 100 characters")
 	private String name;
+	
 	@NotEmpty(message = "LOGIN is required")
 	@Length(min = 5, max = 20, message = "LOGIN must be between 5 and 20 characters")
 	private String login;
+	
 	@NotEmpty(message = "PASSWORD is required")
 	@Length(min = 5, max = 10, message = "PASSWORD must be between 5 and 10 characters")
 	private String password;
 
 	public User() {
-		
+
 	}
 
 	public User(Long id, String name, String login, String password) {
